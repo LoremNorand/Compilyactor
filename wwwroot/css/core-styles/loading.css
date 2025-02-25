@@ -1,0 +1,106 @@
+﻿:root {
+    --true-white: #ffffff;
+    --errant-white: #f8f8ff;
+    --traffic-black: #12121e;
+    --signal-white: #f0f0f8;
+    --deep-purple: #330066;
+}
+
+.logo-overlay {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 6rem;
+    height: 6rem;
+    box-shadow: 0px 0px 32px 8px var(--errant-white);
+}
+
+.pattern-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/Loading Background-02.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.32;
+    z-index: -1;
+}
+
+
+
+#loading-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--traffic-black);
+    background: var(--true-white);
+    border: 2px solid var(--signal-white);
+    border-radius: 2rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 128px 128px var(--errant-white);
+}
+
+    #loading-container p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: -0.25rem;
+        text-align: left;
+    }
+
+    #loading-container h2 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+
+#loading-container .description {
+    font-family: "Sofia Sans Semi Condensed", serif;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    font-size: 14px;
+    color: var(--deep-purple);
+}
+
+.spinner {
+    display: inline-flex;
+    margin: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgb(255,153,204);
+    background: radial-gradient(circle, rgba(255,153,204,1) 0%, rgba(204,0,255,1) 50%, rgba(51,0,102,1) 100%);
+    background-size: 150% 150%;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

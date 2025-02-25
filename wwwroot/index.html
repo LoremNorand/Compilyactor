@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Компиляктор 2</title>
+    <base href="/" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/core-styles/loading.css" rel="stylesheet" />
+    <link href="css/core-styles/fonts.css" rel="stylesheet" />
+    <link href="Compilyactor.styles.css" rel="stylesheet" scoped="true"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+            <img class="logo-overlay" src="images/Kompilyaktor Logo.png"/>
+        <div id="loading-container">
+            <div class="spinner"></div>
+            <h2 class="stalinist-one-regular">Погоди-ка!</h2>
+            <p class="sofia-sans-semi-condensed">Ща, дай подумать...</p>
+            <p class="description"><b>Компиляктор 2</b> | сделано LoremNorand</p>
+        </div>
+        <div class="pattern-overlay"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+</body>
+
+</html>

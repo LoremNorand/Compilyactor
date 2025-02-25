@@ -1,0 +1,13 @@
+﻿:host {
+    display: block; /* Чтобы компонент вел себя как блочный элемент */
+}
+
+.test-box {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #000000;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    text-align: center;
+}
