@@ -1,0 +1,62 @@
+﻿:host {
+}
+
+.navigation-global-container {
+    width: 100%;
+    max-width: 768px;
+    min-width: 128px;
+    min-height: 100vh;
+    /**/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+    align-content: flex-start;
+    /**/
+    background-color: #ffffff;
+    padding: 8px;
+}
+
+.regular-container-element {
+    flex: 1 1 0;
+    /**/
+    min-width: 25%;
+    max-width: 50%;
+    min-height: 128px;
+    /**/
+    padding: 8px;
+    border-radius: 4px;
+    /**/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.wide-container-element {
+    flex: 1 1 0;
+    /**/
+    min-width: 66%;
+    max-width: 100%;
+    min-height: 128px;
+    /**/
+    padding: 8px;
+    border-radius: 4px;
+    /**/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.element-style-1 {
+    background-color: #FF99CC;
+}
+
+.element-style-2 {
+    background-color: #CC99CC;
+}
+
+.element-style-3 {
+    background-color: #9999CC;
+}

@@ -1,0 +1,33 @@
+﻿@code {
+    [Parameter]
+    public string Width { get; set; } = "100%";
+}
+
+<div class="navigation-global-container" style="width: @Width;">
+    <div class="@GetRandomStyle() @GetRandomWidth()-container-element">
+        <p>Hello</p>
+    </div>
+    <div class="@GetRandomStyle() @GetRandomWidth()-container-element">
+        <p>Hell, no</p>
+    </div>
+    <div class="@GetRandomStyle() @GetRandomWidth()-container-element">
+        <p>Hello</p>
+    </div>
+</div>
+
+@code {
+    private Random _random = new Random();
+
+    public string GetRandomStyle()
+    {
+        return $"element-style-{_random.Next(1,4)}";
+    }
+
+    public string GetRandomWidth()
+    {
+        bool isWidth = _random.Next(2) == 0;
+        string width = isWidth ? "regular" : "wide";
+        return width;
+    }
+
+}

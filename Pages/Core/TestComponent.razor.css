@@ -1,5 +1,5 @@
 ﻿:host {
-    display: block; /* Чтобы компонент вел себя как блочный элемент */
+    display: block;
 }
 
 .test-box {
