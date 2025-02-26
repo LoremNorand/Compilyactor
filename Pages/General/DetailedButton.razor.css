@@ -1,0 +1,61 @@
+﻿:root {
+    --true-white: #ffffff;
+    --errant-white: #f8f8ff;
+    --traffic-black: #12121e;
+    --signal-white: #f0f0f8;
+    --deep-purple: #330066;
+}
+
+.button-container {
+    flex: 1 1 0;
+    min-width: 51%;
+    border: 1px var(--signal-white);
+    border-radius: 8px;
+    outline: 1px solid var(--signal-white);
+}
+
+.header-container {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    justify-content: flex-start; /* Или center, если нужно всё по центру */
+    gap: 8px; /* Расстояние между иконкой и текстом */
+    background-color: var(--deep-purple);
+    border-radius: 4px 0 16px 0;
+    color: var(--true-white);
+    cursor: pointer;
+    max-width: 68%;
+}
+
+    .header-container img {
+        max-height: 32px;
+    }
+
+.description-container {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center; /* Тоже выравниваем по центру */
+    justify-content: flex-start;
+    gap: 2px;
+    background-color: var(--true-white);
+    border-radius: 0 0 4px 4px;
+    color: var(--traffic-black);
+}
+
+    .description-container img {
+        max-height: 24px;
+        opacity: 0.68;
+    }
+
+    .description-container p {
+        margin: 0; /* Убираем лишний дефолтный отступ у абзаца */
+        margin-top: 2px;
+    }
+    
+    .description-container hr {
+        min-width: 100%;
+    }
+
+    .description-container splash {
+        font-size: 12px;
+    }

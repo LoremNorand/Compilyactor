@@ -1,18 +1,28 @@
-﻿@code {
+﻿@using Compilyactor.Pages.General
+
+@code {
     [Parameter]
     public string Width { get; set; } = "100%";
 }
 
 <div class="navigation-global-container" style="width: @Width;">
-    <div class="@GetRandomStyle() @GetRandomWidth()-container-element">
-        <p>Hello</p>
-    </div>
-    <div class="@GetRandomStyle() @GetRandomWidth()-container-element">
-        <p>Hell, no</p>
-    </div>
-    <div class="@GetRandomStyle() @GetRandomWidth()-container-element">
-        <p>Hello</p>
-    </div>
+    <DetailedButton 
+        NavigateTo="/test-page" 
+        Icon="DetailedButton.IconType.Hexagon"
+        Title="ЗКИ"
+        SplashCategory="PCI"/>
+    <DetailedButton 
+        NavigateTo="/test-page" 
+        Icon="DetailedButton.IconType.Star"
+        Title="ПССиП"/>
+    <DetailedButton 
+        NavigateTo="/test-page" 
+        Icon="DetailedButton.IconType.Square"
+        Title="КПиЯП"/>
+    <DetailedButton 
+        NavigateTo="/test-page" 
+        Icon="DetailedButton.IconType.Infinity"
+        Title="ТПО"/>
 </div>
 
 @code {

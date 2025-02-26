@@ -1,0 +1,51 @@
+﻿@inject NavigationManager Navigation
+@using Compilyactor.Code
+
+<link href="~/css/core-styles/fonts.css" rel="stylesheet" />
+
+<div class="button-container" @onclick="Navigate">
+	<div class="header-container prosto-one-regular">
+		<img src="@GetIconType()" alt="@Icon.ToString()" />
+		<span class="Title">@Title</span>
+	</div>
+	<div class="description-container sofia-sans-semi-condensed">
+		<div class="description-main"></div>
+		<img src ="images/Clock Icon.svg"/>
+		<p>ЛР№ 1, ЛР№13, ЛР№14...</p>
+		<hr />
+		<span class="splash sofia-sans-semi-condensed">@GetRandomSplash()</span>
+	</div>
+</div>
+
+
+@code {
+	public enum IconType
+	{
+		Square,
+		Circle,
+		Triangle,
+		Hexagon,
+		Star,
+		Infinity
+	}
+
+	[Parameter] public IconType Icon { get; set; } = IconType.Square;
+	[Parameter] public string? NavigateTo { get; set; }
+	[Parameter] public string? Title { get; set; }
+	[Parameter] public string SplashCategory { get; set; } = "PCI";
+
+	private string GetIconType() => $"images/Navigation {Icon.ToString()}.svg";
+
+	private void Navigate()
+	{
+		if(!string.IsNullOrWhiteSpace(NavigateTo))
+		{
+			Navigation.NavigateTo(NavigateTo);
+		}
+	}
+
+	private string GetRandomSplash()
+	{
+		return SplashAggregator.Instance[SplashCategory];
+	}
+}
