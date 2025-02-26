@@ -1,0 +1,32 @@
+﻿<div class="header-global-container">
+    <div class="header-links-container">
+        <img src=""/>
+    </div>
+</div>
+
+@code {
+    private readonly List<string> _iconsEtalone = new List<string>
+    {
+        "Telegram",
+        "GitHub",
+        "Instagram"
+    };
+
+    private List<string> _icons = new List<string>
+    {
+    };
+
+    private Random _random = new Random();
+
+    public string PickRandomLink()
+    {
+        if (_icons.Count == 0)
+            _icons = new List<string>(_iconsEtalone);
+
+        int length = _icons.Count;
+        int i = _random.Next(length);
+        string value = _icons[i];
+        _icons.RemoveAt(i);
+        return value;        
+    }
+}

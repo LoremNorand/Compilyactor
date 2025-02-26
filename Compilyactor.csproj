@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Content Remove="Pages\Core\Navigator.razor" />
+    <Content Remove="Pages\General\Splash.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,10 +27,16 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Pages\Core\Navigator.razor" />
+    <_ContentIncludedByDefault Remove="Pages\General\Splash.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Pages\General\Navigator.razor" />
+    <None Include="Pages\General\Splash.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\General\Splash.razor" />
   </ItemGroup>
 
 </Project>

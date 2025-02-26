@@ -6,6 +6,8 @@
 body {
     background-color: var(--errant-white);
     color: var(--traffic-black);
+    margin: 0;
+    padding: 0;
 }
 
 

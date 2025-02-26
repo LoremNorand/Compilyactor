@@ -1,0 +1,20 @@
+﻿<span class=@Class>@PickSplash()</span>
+
+@code {
+    private string? _category = "";
+    private Random _random = new Random();
+
+    [Parameter]
+    public string Category { get => _category; set => _category = value; }
+    [Parameter]
+    public string? Class { get; set; } = "";
+
+
+    private string PickSplash()
+    {
+        if (!File.Exists($"texts/splashes/{_category}.txt"))
+            return "Unknown category";
+        string[] splashes = File.ReadAllLines($"texts/splashes/{_category}.txt");
+        return splashes[_random.Next(_splashes.Length)];
+    }
+}
