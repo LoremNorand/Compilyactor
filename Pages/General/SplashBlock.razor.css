@@ -1,0 +1,20 @@
+﻿:root {
+    --true-white: #ffffff;
+    --errant-white: #f8f8ff;
+    --traffic-black: #12121e;
+    --signal-white: #f0f0f8;
+    --deep-purple: #330066;
+}
+
+body {
+}
+
+.splash-container {
+    background-color: var(--traffic-black);
+    color: var(--true-white);
+    padding: 4px;
+    width: max-content;
+    max-width: inherit;
+    border-radius: 4px;
+    font-size: 14px;
+}

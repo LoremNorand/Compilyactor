@@ -6,26 +6,26 @@
 }
 
 <div class="navigation-global-container" style="width: @Width;">
-    <DetailedButton 
-        NavigateTo="/"
-        Icon="DetailedButton.IconType.Triangle"
-        Title="Главная"/>
-    <DetailedButton
-        NavigateTo="/test-page" 
-        Icon="DetailedButton.IconType.Hexagon"
-        Title="ЗКИ"/>
-    <DetailedButton 
-        NavigateTo="/test-page" 
-        Icon="DetailedButton.IconType.Star"
-        Title="ПССиП"/>
-    <DetailedButton 
-        NavigateTo="/test-page
-        Icon="DetailedButton.IconType.Square"
-        Title="КПиЯП"/>
-    <DetailedButton 
-        NavigateTo="/test-page" 
-        Icon="DetailedButton.IconType.Infinity"
-        Title="ТПО"/>
+    <DetailedButton NavigateTo="/"
+                    Icon="DetailedButton.IconType.Triangle"
+                    Title="Главная" 
+                    SplashCategory="MAIN"/>
+    <DetailedButton NavigateTo="/test-page"
+                    Icon="DetailedButton.IconType.Hexagon"
+                    Title="ЗКИ" 
+                    SplashCategory="PCI"/>
+    <DetailedButton NavigateTo="/test-page"
+                    Icon="DetailedButton.IconType.Star"
+                    Title="ПССиП"
+                    SplashCategory="PSSIP"/>
+    <DetailedButton NavigateTo="/test-page"
+                    Icon="DetailedButton.IconType.Square"
+                    Title="КПиЯП" 
+                    SplashCategory="PDAPL"/>
+    <DetailedButton NavigateTo="/test-page"
+                    Icon="DetailedButton.IconType.Infinity"
+                    Title="ТПО" 
+                    SplashCategory="ST"/>
 </div>
 
 @code {
@@ -33,7 +33,7 @@
 
     public string GetRandomStyle()
     {
-        return $"element-style-{_random.Next(1,4)}";
+        return $"element-style-{_random.Next(1, 4)}";
     }
 
     public string GetRandomWidth()

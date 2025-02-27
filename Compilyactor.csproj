@@ -9,12 +9,12 @@
 
   <ItemGroup>
     <Content Remove="Pages\Core\Navigator.razor" />
-    <Content Remove="Pages\General\Splash.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.18" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.18" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,16 +27,20 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Pages\Core\Navigator.razor" />
-    <_ContentIncludedByDefault Remove="Pages\General\Splash.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Pages\General\Navigator.razor" />
-    <None Include="Pages\General\Splash.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\General\Splash.razor" />
+    <Folder Include="Code\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\texts\splashes\PCI.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

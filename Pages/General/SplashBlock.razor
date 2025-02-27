@@ -1,0 +1,63 @@
+﻿@inject HttpClient Http
+@using System.Text.Json.Serialization
+@using System.Text
+
+<div class="splash-container">
+	<span class="@Class">@SplashText</span>
+</div>
+
+@code {
+	[Parameter]
+	public string Key { get; set; } = "";
+
+	[Parameter]
+	public string Class { get; set; } = "";
+
+	private string SplashText { get; set; } = "🤡";
+
+	protected override async Task OnInitializedAsync()
+	{
+		if(string.IsNullOrWhiteSpace(Key))
+		{
+			SplashText = "Unknown category";
+			return;
+		}
+
+		string filePath = $"texts/splashes/{Key}.json";
+		try
+		{
+			var response = await Http.GetAsync(filePath);
+			if(response.IsSuccessStatusCode)
+			{
+				var responseBytes = await response.Content.ReadAsByteArrayAsync();
+				string json = Encoding.UTF8.GetString(responseBytes);
+				Console.WriteLine($"Raw JSON response: {json}");
+				var data = System.Text.Json.JsonSerializer.Deserialize<SplashData>(json);
+
+				if(data?.Splashes?.Count > 0)
+				{
+					var random = new Random();
+					SplashText = data.Splashes[random.Next(data.Splashes.Count)];
+				}
+				else
+				{
+					SplashText = "No splashes found";
+				}
+			}
+			else
+			{
+				SplashText = "File not found";
+			}
+		}
+		catch(Exception ex)
+		{
+			SplashText = $"Ошибка: {ex.Message}";
+		}
+	}
+
+	private class SplashData
+	{
+		[JsonPropertyName("splashes")]
+		public List<string> Splashes { get; set; } = new();
+	}
+}

@@ -37,17 +37,18 @@
         height: 32px;
     }
 
-    .description-container {
-        padding: 12px 16px 8px 4px;
-        display: flex;
-        align-items: center; /* Тоже выравниваем по центру */
-        justify-content: flex-start;
-        gap: 2px;
-        background-color: var(--true-white);
-        border-radius: 0 0 4px 4px;
-        color: var(--traffic-black);
-        transition-duration: 150ms;
-    }
+.description-container {
+    padding: 12px 4px 4px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Тоже выравниваем по центру */
+    justify-content: flex-start;
+    gap: 8px;
+    background-color: var(--true-white);
+    border-radius: 0 0 4px 4px;
+    color: var(--traffic-black);
+    transition-duration: 150ms;
+}
 
     .description-container img {
         max-height: 22px;
@@ -58,7 +59,7 @@
         margin: 0; /* Убираем лишний дефолтный отступ у абзаца */
         margin-top: 2px;
     }
-    
+
     .description-container hr {
         min-width: 100%;
     }
@@ -78,6 +79,14 @@
     .button-container:hover .header-container {
         width: 72%;
     }
+
+.description-main {
+    display: flex; /* А тут — по горизонтали, для иконки и текста */
+    align-items: flex-end;
+    min-width: 100%;
+    padding: inherit inherit 18px inherit;
+    gap: 2px;
+}
 
 @keyframes hovered {
     from {

@@ -1,8 +1,6 @@
 ﻿@page "/"
 @using Compilyactor.Pages.General
 
-@inherits LayoutComponentBase
-
 <link href="~/css/core-styles/fonts.css" rel="stylesheet" />
 
 <main class="page-container">
@@ -15,7 +13,10 @@
     <div id="main-container">
         <h1>Hello, world!</h1>
         <p>Lorem ipsum</p>
-        <Splash Category></Splash>
-        <Splash></Splash>
+        <SplashBlock Key="PCI" Class="sofia-sans-semi-condensed" />
+        <SplashBlock Key="PCI" Class="sofia-sans-semi-condensed" />
+        <SplashBlock Key="PCI" Class="sofia-sans-semi-condensed" />
     </div>
 </main>
+
+@code {}

@@ -1,13 +1,4 @@
 ﻿@inject HttpClient Http
-@using Compilyactor.Code
-
-@code {
-    protected override async Task OnInitializedAsync()
-    {
-        SplashAggregator.Instance.Initialize(Http);
-        await SplashAggregator.Instance.CollectSplashBaseAsync();
-    }
-}
 
 <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
