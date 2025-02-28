@@ -1,0 +1,43 @@
+﻿@using System.Text.RegularExpressions
+
+<div @onclick="HandleClick" class="icon-container" style="width: @Size;--bg-c: @Color; height: @Size">
+    <img src="@ImagePath" alt="@IconName" style="width: @GetImageSize()"/>
+</div>
+
+@code {
+    public string ImagePath = "images/Service.png";
+
+    [Parameter] public string IconName { get; set; } = "Service";
+    [Parameter] public string IconType { get; set; } = "png";
+    [Parameter] public string Size { get; set; } = "64px";
+    [Parameter] public string? Color { get; set; }
+    [Parameter] public EventCallback OnClick { get; set; }
+
+    protected override void OnInitialized()
+    {
+        ImagePath = GenerateImagePath();
+    }
+
+    public string GenerateImagePath()
+    {
+        return $"images/{IconName}.{IconType}";
+    }
+
+    public string GetImageSize()
+    {
+        var match = Regex.Match(Size, @"^(\d+)(\D*)$");
+
+        int mainSize = int.Parse(match.Groups[1].Value); // Число
+        string unit = match.Groups[2].Value; // Единица измерения
+
+        int imageSize = (int)Math.Round(mainSize * 0.68); // 68% округлённо
+
+        return $"{imageSize}{unit}";
+    }
+
+
+    private async Task HandleClick()
+    {
+        await OnClick.InvokeAsync();
+    }
+}

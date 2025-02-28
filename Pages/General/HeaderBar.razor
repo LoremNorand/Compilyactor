@@ -1,15 +1,21 @@
-﻿<div class="header-global-container">
-    <div class="header-links-container">
-        <img src=""/>
-    </div>
+﻿@using Compilyactor.Pages.Core
+
+<div class="bar-container">
+    <IconButton Color="#FF0066"
+                IconName="@PickRandomLink()"
+                IconType="png"
+                OnClick="@Temp"
+                Size="32px">
+    </IconButton>
 </div>
 
 @code {
     private readonly List<string> _iconsEtalone = new List<string>
     {
-        "Telegram",
-        "GitHub",
-        "Instagram"
+        "Telegram Logo",
+        "GitHub Logo",
+        "Instagram Logo",
+        "Slack Logo"
     };
 
     private List<string> _icons = new List<string>
@@ -27,6 +33,11 @@
         int i = _random.Next(length);
         string value = _icons[i];
         _icons.RemoveAt(i);
-        return value;        
+        return value;
+    }
+
+    private void Temp()
+    {
+
     }
 }

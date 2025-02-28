@@ -6,6 +6,7 @@
     max-width: 768px;
     min-width: 128px;
     min-height: 100vh;
+    border-radius: 0 40px 0 0;
     /**/
     display: flex;
     flex-wrap: wrap;
@@ -13,9 +14,11 @@
     justify-content: flex-start;
     align-content: flex-start;
     /**/
-    background: rgb(51,0,102);
-    background: linear-gradient(333deg, rgba(51,0,102,1) 0%, rgba(102,0,255,1) 68%, rgba(153,153,255,1) 100%);
-    padding: 32px 24px 32px 24px;
+    /*background: rgb(51,0,102);
+    background: linear-gradient(333deg, rgba(51,0,102,1) 0%, rgba(102,0,255,1) 68%, rgba(153,153,255,1) 100%);*/
+    background-color: #f0f0f8;
+    box-shadow: inset 18px 18px 32px #ccccd3, inset -18px -18px 32px #ffffff;
+    padding: 40px 32px 32px 32px;
 }
 
 .regular-container-element {

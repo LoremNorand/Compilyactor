@@ -1,0 +1,22 @@
+﻿body {
+}
+
+:root {
+    --true-white: #ffffff;
+    --errant-white: #f8f8ff;
+    --traffic-black: #12121e;
+    --signal-white: #f0f0f8;
+    --deep-purple: #330066;
+    --bg-c: #f8f8ff;
+}
+
+.icon-container {
+    border-radius: 12px;
+    background-color: var(--bg-c);
+    box-shadow: 6px 6px 12px #dadae0, -6px -6px 12px #ffffff;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 10;
+}
